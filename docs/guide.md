@@ -88,7 +88,7 @@ npm run docs:build
 
 ## Configuring release
 
-### push to https://<USERNAME>.github.io/<REPO> ?
+> push to https://\<USERNAME\>.github.io/\<REPO\> ?
 
 00.open or colse,true:"0",false:"1"
 ```html
@@ -120,7 +120,7 @@ LOCAL_BRANCH="master"
 REMOTE_BRANCH="gh-pages"
 ```
 
-05.set your your doc is
+06.set your your doc is
 ```html
 #deploy.sh
 DOCS_DIR="docs/.vuepress/dist"
@@ -133,7 +133,7 @@ DOCS_DIR="docs/.vuepress/dist"
 CUSTOM_DOMAIN="" #www.example.com
 ```
 
-### push to https://<USERNAME>.github.io?
+> push to https://\<USERNAME\>.github.io?
 
 00.open or close,true:"0",false:"1"
 ```html
@@ -172,7 +172,7 @@ DOCS_DIR="docs/.vuepress/dist"
 ```
 
 
-05.has a custom domain?
+06.has a custom domain?
 ```html
 #deploy.sh
 CUSTOM_DOMAIN="" #www.example.com
