@@ -37,19 +37,19 @@ export default {
     setTimeout(function () {
       that.someList = [
         {
-          html: 'slider1',
+          html: '',
           style: {
             'background': '#4abf8a'
           }
         },
         {
-          html: 'slider2',
+          html: '',
           style: {
             'background': '#4bbfc3'
           }
         },
         {
-          html: 'slider3',
+          html: '',
           style: {
             'background': '#7baabe'
           }
@@ -64,7 +64,7 @@ export default {
 }
 </script>
 <style scoped>
-  @keyframes loading-7{ 
+  @keyframes loading-7{
   0%{margin-bottom:0}
   50%{margin-bottom:20px;}
   100%{margin-bottom:0px;}
