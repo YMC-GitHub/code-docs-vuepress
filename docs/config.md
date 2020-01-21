@@ -1,5 +1,5 @@
 ---
-sidebar: false
+sidebar: true
 ---
 <common-demoItem></common-demoItem>
 ::: slot name
@@ -29,12 +29,6 @@ npm install
   </div>
 </common-demoCode>
 
-<common-demoCode>
-  <div slot="codeText">
-
-
-  </div>
-</common-demoCode>
 
 
 ## Configuring dev
@@ -43,6 +37,7 @@ npm install
 
 <common-demoCode>
   <div slot="codeText">
+
 ```js
 //server.config.js
   host: '0.0.0.0',
