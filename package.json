@@ -1,0 +1,26 @@
+{
+  "name": "blog-tpl-vuepress",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/ymc-github/blog-tpl-vuepress.git"
+  },
+  "description": "a blog tpl based on vuepress",
+  "author": "yemiancheng <ymc-github@gmail.com>",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^1.0.0-alpha.30"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [
+    "blog",
+    "tpl",
+    "vuepress"
+  ],
+  "license": "MIT"
+}
