@@ -12,25 +12,6 @@ add a doc
 </common-demoCode>
 
 
- ### install
-
-  01. get the code
-
-  02. install his dep
-
-<common-demoCode>
-  <div slot="codeText">
-
-```html
-git clone https://github.com/YMC-GitHub/lib-doc-tpl-with-vuepress.git
-npm install
-```
-
-  </div>
-</common-demoCode>
-
-
-
 ## Configuring dev
 
 01.where the host is?
