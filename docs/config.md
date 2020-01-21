@@ -22,7 +22,7 @@ add a doc
   <div slot="codeText">
 
 ```html
-git clone https://github.com/YMC-GitHub/blog-tpl-vuepress.git
+git clone https://github.com/YMC-GitHub/lib-doc-tpl-with-vuepress.git
 npm install
 ```
 
@@ -83,7 +83,7 @@ npm install
 
 ```js
 //server.config.js
-  base: '/blog-tpl-vuepress/'
+  base: '/lib-doc-tpl-with-vuepress/'
 ```
 
   </div>
@@ -100,7 +100,7 @@ npm install
 
 ```js
 //server.config.js
-  base: '/blog-tpl-vuepress/'
+  base: '/lib-doc-tpl-with-vuepress/'
 ```
 
   </div>
@@ -132,10 +132,10 @@ npm install
 ```js
 //title.config.js
   'en': {
-    title: 'blog-tpl-vuepress'
+    title: 'lib-doc-tpl-with-vuepress'
   },
   'zh': {
-    title: 'blog-tpl-vuepress'
+    title: 'lib-doc-tpl-with-vuepress'
   }
 ```
 
@@ -185,7 +185,7 @@ REPO_USER="YMC-GitHub"
 
 ```html
 #deploy.sh
-REPO_NAME="blog-tpl-vuepress"
+REPO_NAME="lib-doc-tpl-with-vuepress"
 ```
 
   </div>
@@ -288,7 +288,7 @@ REPO_USER="YMC-GitHub"
 
 ```html
 #deploy.sh
-REPO_NAME="blog-tpl-vuepress"
+REPO_NAME="lib-doc-tpl-with-vuepress"
 ```
   </div>
 </common-demoCode>

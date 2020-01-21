@@ -2,7 +2,7 @@
 
 #define your config
 REPO_USER="YMC-GitHub"
-REPO_NAME="blog-tpl-vuepress"
+REPO_NAME="lib-doc-tpl-with-vuepress"
 LOCAL_BRANCH="master"
 REMOTE_BRANCH="gh-pages"
 MASTER_BRANCH="master"

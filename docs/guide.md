@@ -6,7 +6,7 @@ sidebar: auto
 01.get the code
 
 ```html
-git clone https://github.com/YMC-GitHub/blog-tpl-vuepress.git
+git clone https://github.com/YMC-GitHub/lib-doc-tpl-with-vuepress.git
 ```
 
 02.install his dep
@@ -57,7 +57,7 @@ npm run docs:build
 04.has the base url?
 ```js
 //server.config.js
-  base: '/blog-tpl-vuepress/'
+  base: '/lib-doc-tpl-with-vuepress/'
 ```
 
 
@@ -66,7 +66,7 @@ npm run docs:build
 01.has the base url?
 ```js
 //server.config.js
-  base: '/blog-tpl-vuepress/'
+  base: '/lib-doc-tpl-with-vuepress/'
 ```
 
 02.add custom ico?
@@ -79,10 +79,10 @@ npm run docs:build
 ```js
 //title.config.js
   'en': {
-    title: 'blog-tpl-vuepress'
+    title: 'lib-doc-tpl-with-vuepress'
   },
   'zh': {
-    title: 'blog-tpl-vuepress'
+    title: 'lib-doc-tpl-with-vuepress'
   }
 ```
 
@@ -105,7 +105,7 @@ REPO_USER="YMC-GitHub"
 02.set your github repo
 ```html
 #deploy.sh
-REPO_NAME="blog-tpl-vuepress"
+REPO_NAME="lib-doc-tpl-with-vuepress"
 ```
 
 03.set your local git repo branch
@@ -150,7 +150,7 @@ REPO_USER="YMC-GitHub"
 02.set your github repo
 ```html
 #deploy.sh
-REPO_NAME="blog-tpl-vuepress"
+REPO_NAME="lib-doc-tpl-with-vuepress"
 ```
 
 03.set your local git repo branch

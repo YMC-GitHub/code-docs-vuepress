@@ -1,8 +1,8 @@
 module.exports = {
   'en': {
-    title: 'blog-tpl-vuepress'
+    title: 'lib-doc-tpl-with-vuepress'
   },
   'zh': {
-    title: 'blog-tpl-vuepress'
+    title: 'lib-doc-tpl-with-vuepress'
   }
 }

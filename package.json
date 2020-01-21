@@ -1,11 +1,11 @@
 {
-  "name": "blog-tpl-vuepress",
+  "name": "lib-doc-tpl-with-vuepress",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com/ymc-github/blog-tpl-vuepress.git"
+    "url": "git@github.com/ymc-github/lib-doc-tpl-with-vuepress.git"
   },
-  "description": "a blog tpl based on vuepress",
+  "description": "write lib doc tpl based on vuepress",
   "author": "yemiancheng <ymc-github@gmail.com>",
   "scripts": {
     "docs:dev": "vuepress dev docs",
