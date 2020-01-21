@@ -3,22 +3,15 @@ const fs = require('fs')
 const path = require('path')
 
 const rootPath = path.resolve(__dirname, '../../../../')
-
 const demos = fs
   .readdirSync(path.resolve(rootPath, `docs/demos/`))
-  .map(filename => filename.slice(0, -3))
+  .map(filename => {
+    //delete .md in xx.md
+    let name = filename.slice(0, -3)
+    name = name.toUpperCase() === 'README' ? '' : name
+    return name
+  })
   .sort()
-console.log(demos)
-module.exports = [
-  '',
-  'Basic',
-  'Center',
-  'CoverFlow',
-  'Fade',
-  'Loop',
-  'Multiple',
-  'Nest',
-  'RenderPagination',
-  'VariableWidth',
-  'Vertical',
-]
+// console.log(demos)
+//require('../../utils').getDir(`docs/demos/`)
+module.exports = demos
