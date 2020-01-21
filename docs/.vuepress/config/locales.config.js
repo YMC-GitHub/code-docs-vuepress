@@ -11,10 +11,12 @@ module.exports = {
       title: titleConfig.en.title
     },
     //for language zh
+    /*
     '/zh/': {
       lang: 'zh-CN',
       title: titleConfig.zh.title
     }
+    */
   },
   themeConfig: {
     locales: {
@@ -23,9 +25,10 @@ module.exports = {
         label: 'English',
         nav: dataNavEN,
         sidebar: {
-          '/demos/': dataSidebarDemo
+          //'/demos/': dataSidebarDemo
         }
       },
+      /*
       '/zh/': {
         // 多语言下拉菜单的标题
         selectText: '选择语言',
@@ -33,9 +36,10 @@ module.exports = {
         label: '简体中文',
         nav: dataNavZH,
         sidebar: {
-          '/zh/demos/': dataSidebarDemo
+          //'/zh/demos/': dataSidebarDemo
         }
       }
+      */
     }
   }
 }
