@@ -14,5 +14,9 @@ module.exports = [
   {
     text: '教程',
     link: '/zh/guide'
-  }
+  },
+  {
+    text: '配置',
+    link: '/config'
+  },
 ]

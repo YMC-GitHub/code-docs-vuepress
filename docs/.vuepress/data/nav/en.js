@@ -18,5 +18,9 @@ module.exports = [
   {
     text: 'Theme',
     link: '/theme/'
-  }
+  },
+  {
+    text: 'Config',
+    link: '/config'
+  },
 ]
