@@ -4,23 +4,29 @@ module.exports = [
     link: '/'
   },
   {
-    text: 'Demos',
-    link: '/demos/'
+    text: 'Install',
+    link: '/install'
   },
   {
-    text: 'Docs',
-    link: '/docs'
+    text: 'Config',
+    link: '/config'
   },
+  {
+    text: 'Quik-start',
+    link: '/start'
+  },
+  /*
   {
     text: 'Guide',
     link: '/guide'
   },
   {
-    text: 'Theme',
-    link: '/theme/'
+    text: 'Demos',
+    link: '/demos/'
   },
+  */
   {
-    text: 'Config',
-    link: '/config'
+    text: 'Docs',
+    link: '/docs'
   },
 ]
