@@ -49,14 +49,14 @@
   </div>
 </template>
 <script>
-import title from "../../config/title.config";
+//import title from "../../config/title.config";
 
 export default {
   data() {
     return {
-      title: title.en.title || "",
+      title: "",
       size: "xx",
-      name: ""
+      name: "xx"
     };
   }
 };
