@@ -6,6 +6,7 @@ REPO_NAME="blog-tpl-vuepress"
 LOCAL_BRANCH="master"
 REMOTE_BRANCH="gh-pages"
 MASTER_BRANCH="master"
+DOCS_DIR="docs/.vuepress/dist"
 CUSTOM_DOMAIN="" #www.example.com
 # push to https://<USERNAME>.github.io/<REPO> ? TRUE=0,FALSE=1
 A="0"
@@ -28,7 +29,7 @@ set -e
 #build you docs
 #npm run docs:build
 #go to you docs dir you build ouput to
-cd docs/.vuepress/dist
+cd "$DOCS_DIR"
 #genrate custom domain ?
 if [ -n "$CUSTOM_DOMAIN" ]; then
   echo $CUSTOM_DOMAIN >CNAME
