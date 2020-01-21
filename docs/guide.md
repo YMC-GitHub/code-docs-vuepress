@@ -3,486 +3,179 @@ sidebar: auto
 ---
 ## Quick start
 
-1.install `vue-concise-slider`
+01.get the code
 
 ```html
-  npm install vue-concise-slider --save
+git clone https://github.com/YMC-GitHub/blog-tpl-vuepress.git
 ```
 
-2.configure
+02.install his dep
 
 ```html
-<template>
-<!-- Make a frame wrapped slider -->
- <div style="width:100%;margin:20px auto;height:400px">
-      <!-- Configuring slider components -->
-      <slider ref="slider" :options="options" @slide='slide' @tap='onTap' @init='onInit'>
-          <slideritem v-for="(item,index) in pages" :key="index" :style="item.style">{{item.html}}</slideritem>
-          <!-- Set loading -->
-          <div slot="loading">loading...</div>
-      </slider>
- </div>
-</template>
-<script>
-import { slider, slideritem } from 'vue-concise-slider' // import slider components
-export default {
-   el: '#app',
-   data () {
-      return {
-        //Image list
-        pages:[
-          {
-          html: 'slider1',
-          style: {
-            'background': '#1bbc9b'
-            }
-          },
-          {
-            html: 'slider2',
-            style: {
-              'background': '#4bbfc3'
-            }
-          },
-          {
-            html: 'slider3',
-            style: {
-              'background': '#7baabe'
-            }
-          }
-        ],
-        //Sliding configuration [obj]
-        options: {
-          currentPage: 0,
-          thresholdDistance: 500,
-          thresholdTime: 100,
-          autoplay:1000,
-          loop:true,
-          direction:'vertical',
-          loopedSlides:1,
-          slidesToScroll:1,
-          timingFunction: 'ease',
-          speed: 300
-        }
-      }
-    },
-    components: {
-        slider
-    },
-    methods: {
-      // Listener event
-      slide (data) {
-        console.log(data)
-      },
-      onTap (data) {
-        console.log(data)
-      },
-      onInit (data) {
-        console.log(data)
-      }
-    }
-}
-</script>
+npm install
 ```
 
-## Configuring loading
-`<div slot="loading"></div>` Custom loading wrapped inside
+03.run in dev mode
+
 ```html
-  <style>
-    /*loadin*/
-    @-webkit-keyframes loading-7{
-      0%{margin-bottom:0}
-      50%{margin-bottom:20px;}
-      100%{margin-bottom:0px;}
-    }
-    .loadingDot .loading-7 i {
-      display: inline-block;
-      margin-left: 5px;
-      background: #333;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-    }
-    .loadingDot i:nth-child(1) {
-      -webkit-animation: loading-7 .7s ease-in 0s loopedSlides;
-      animation: loading-7 .7s ease-in 0s loopedSlides;
-    }
-    .loadingDot i:nth-child(2) {
-      -webkit-animation: loading-7 .7s ease-in 0.15s loopedSlides;
-    }
-    .loadingDot i:nth-child(3) {
-      -webkit-animation: loading-7 .7s ease-in 0.3s loopedSlides;
-    }
-    .loadingDot i:nth-child(4) {
-      -webkit-animation: loading-7 .7s ease-in 0.45s loopedSlides;
-    }
-  </style>
-  <slider :pages="someList" :options="options" @slide='slide' @tap='onTap' @init='onInit'>
-      <!-- setting loading -->
-      <div slot="loading">
-        <div class="loadingDot">
-          <i></i>
-          <i></i>
-          <i></i>
-          <i></i>
-        </div>
-      </div>
-  </slider>
+npm run docs:dev
 ```
 
-## Asynchronous loading
+04.run in pro mode
 
-1.`someList` set `empty array([])`
-
-2.The asynchronous data is assigned directly to the format `someList`
 ```html
-  <template>
-      <div style="width:70%;margin:20px auto;height:400px">
-        <slider ref="slider" :options="options" >
-            <slideritem v-for="(item,index) in someList" :key="index" :style="item.style">{{item.html}}</slideritem>
-        </slider>
-      </div>
-  </template>
-  <script>
-  import { slider, slideritem } from 'vue-concise-slider'
-  export default {
-    el: '#sliderbasic',
-    data () {
-      return {
-        // someList
-        someList: [],
-        options: {
-          currentPage: 1,
-          thresholdDistance: 100,
-          thresholdTime: 300,
-          speed: 300,
-          timingFunction: 'ease',
-          loop: true,
-          autoplay: 0
-        }
-      }
-    },
-    mounted () {
-      let that = this
-      setTimeout(function () {
-        // Picture data can be assigned directly to someList
-        that.someList = [
-          {
-            html: '<div class="slide1">slide1</div>',
-            style: {
-              'background': '#1bbc9b'
-            }
-          },
-          {
-            html: 'slide2',
-            style: {
-              'background': '#4bbfc3'
-            }
-          },
-          {
-            html: 'slide3',
-            style: {
-              'background': '#7baabe'
-            }
-          }
-        ]
-      }, 2000)
-    },
-    components: {
-      slider
-    }
+npm run docs:build
+```
+
+05.release to you platform
+
+```html
+./relaseh.sh
+```
+
+## Configuring dev
+
+01.where the host is?
+```js
+//server.config.js
+  host: '0.0.0.0',
+```
+
+02.which port will use?
+```js
+//server.config.js
+  port: 8000,
+```
+
+03.where the html file to serve?
+
+```js
+//server.config.js
+  dest: 'docs/.vuepress/dist',
+```
+
+04.has the base url?
+```js
+//server.config.js
+  base: '/blog-tpl-vuepress/'
+```
+
+
+## Configuring pro
+
+01.has the base url?
+```js
+//server.config.js
+  base: '/blog-tpl-vuepress/'
+```
+
+02.add custom ico?
+```js
+//head.config.js
+  ['link', { rel: 'icon', href: '/favicon.ico' }]
+```
+
+03.set you title for html file?
+```js
+//title.config.js
+  'en': {
+    title: 'blog-tpl-vuepress'
+  },
+  'zh': {
+    title: 'blog-tpl-vuepress'
   }
-  </script>
 ```
-## Fade Effect
 
-1.effect set `fade`,and loop set `true`,Openning cycle slip
+## Configuring release
 
+### push to https://<USERNAME>.github.io/<REPO> ?
+
+00.open or colse,true:"0",false:"1"
 ```html
-  <template>
-      <div style="width:70%;margin:20px auto;height:400px">
-        <slider ref="slider" :options="options" >
-          <slideritem v-for="(item,index) in someList" :key="index" :style="item.style">{{item.html}}</slideritem>
-        </slider>
-      </div>
-  </template>
-  <script>
-  import { slider, slideritem } from 'vue-concise-slider'
-  export default {
-    el: '#sliderbasic',
-    data () {
-      return {
-        // someList
-        someList: [],
-        options: {
-          effect: 'fade',
-          currentPage: 1,
-          thresholdDistance: 100,
-          thresholdTime: 300,
-          speed: 300,
-          timingFunction: 'ease',
-          loop: true,
-          autoplay: 0
-        }
-      }
-    },
-    mounted () {
-      let that = this
-      setTimeout(function () {
-        // Picture data can be assigned directly to someList
-        that.someList = [
-          {
-            html: '<div class="slide1">slide1</div>',
-            style: {
-              'background': '#1bbc9b'
-            }
-          },
-          {
-            html: 'slide2',
-            style: {
-              'background': '#4bbfc3'
-            }
-          },
-          {
-            html: 'slide3',
-            style: {
-              'background': '#7baabe'
-            }
-          }
-        ]
-      }, 2000)
-    },
-    components: {
-      slider
-    }
-  }
-  </script>
+#deploy.sh
+A="0"
 ```
 
-## CoverFlow Effect
-
-1. effect set `coverflow`,and loop set `true`,Openning cycle slip
-2. You must use a template to wrap the slideritem
-3. The total number of pages passed in `pageLength`, and the current serial number `index`
-
+01.set your github user
 ```html
-  <template>
-      <div style="width:70%;margin:20px auto;height:400px">
-        <slider ref="slider" :options="options">
-            <slideritem v-for="(item,index) in someList" :pageLength="someList.length" :index="index" :key="index" :style="item.style">{{item.html}}</slideritem>
-        </slider>
-      </div>
-  </template>
-  <script>
-  import slider from '../components/slider'
-  export default {
-    el: '#sliderbasic',
-    data () {
-      return {
-      someList: [],
-      options: {
-          effect: 'coverflow',
-          currentPage: 1,
-          tracking: false,
-          thresholdDistance: 100,
-          thresholdTime: 300,
-          deviation: 200,
-          widthScalingRatio: 0.8,
-          heightScalingRatio: 0.8,
-          loopedSlides: 2,
-          slidesToScroll: 1,
-          loop: true
-        }
-      }
-    },
-    mounted () {
-      let that = this
-      setTimeout(function () {
-        // Picture data can be assigned directly to someList
-        that.someList = [
-          {
-            html: '<div class="slide1">slide1</div>',
-            style: {
-              'background': '#1bbc9b'
-            }
-          },
-          {
-            html: 'slide2',
-            style: {
-              'background': '#4bbfc3'
-            }
-          },
-          {
-            html: 'slide3',
-            style: {
-              'background': '#7baabe'
-            }
-          }
-        ]
-      }, 2000)
-    },
-    components: {
-      slider
-    }
-  }
-  </script>
+#deploy.sh
+REPO_USER="YMC-GitHub"
 ```
 
-## Use custom paging
-
-1. Pagination is set to true
-2. Set the renderPagination function
-
+02.set your github repo
 ```html
-  <template>
-  <div>
-    <div style="width:70%;margin:20px auto;height:400px">
-      <slider ref="slider" :options="options" @slide='slide' @tap='onTap' @init='onInit'>
-        <slideritem v-for="(item,index) in someList" :key="index" :style="item.style">{{item.html}}</slideritem>
-      </slider>
-    </div>
-  </div>
-</template>
-<script>
-import { slider, slideritem } from '../../dist/module.js'
-export default {
-  el: '#sliderbasic',
-  data () {
-    return {
-      someList: [],
-      options: {
-        pagination: true,
-        thresholdDistance: 100, // 滑动距离阈值判定
-        thresholdTime: 300, // 滑动时间阈值判定
-        speed: 300, // 滑动速度
-        renderPagination: (h, index) => {
-          return h('div', {
-            class: 'swiper-pagination-bullet'
-          }, [index])
-        }
-      }
-    }
-  },
-  mounted () {
-    let that = this
-    setTimeout(function () {
-      that.someList = [
-        {
-          html: 'slide1',
-          style: {
-            'background': '#1bbc9b'
-          }
-        },
-        {
-          html: 'slide2',
-          style: {
-            'background': '#4bbfc3'
-          }
-        },
-        {
-          html: 'slide3',
-          style: {
-            'background': '#7baabe'
-          }
-        }
-      ]
-    }, 2000)
-  },
-  components: {
-    slider,
-    slideritem
-  },
-}
-</script>
+#deploy.sh
+REPO_NAME="blog-tpl-vuepress"
 ```
 
-## Nested slider
-
-1. Effect is set to 'nest'
-2. Slideritem nesting
-
+03.set your local git repo branch
 ```html
-  <template>
-  <div>
-    <div style="width:70%;margin:20px auto;height:400px">
-      <slider ref="slider" :options="options" @slide='slide' @tap='onTap' @init='onInit'>
-        <slideritem v-for="(item,index) in someList" :key="index" :style="item.style">{{item.html}}</slideritem>
-        <slideritem>
-          <slider ref="slider" :options="options1">
-            <slideritem v-for="(item,index) in someList1" :key="index" :style="item.style">{{item.html}}</slideritem>
-          </slider>
-        </slideritem>
-        <slideritem v-for="(item,index) in someList" :key="index + 3" :style="item.style">{{item.html}}</slideritem>
-      </slider>
-    </div>
-  </div>
-</template>
-<script>
-import { slider, slideritem } from '../../dist/module.js'
-export default {
-  el: '#slidernest',
-  data () {
-    return {
-      someList: [],
-      someList1: [],
-      options: {
-        // direction: 'vertical',
-        effect: 'nest',
-        pagination: true,
-        // nested: false, // 嵌套
-        thresholdDistance: 100, // 滑动距离阈值判定
-        thresholdTime: 300, // 滑动时间阈值判定
-        grabCursor: true, // 抓标样式
-        speed: 300, // 滑动速度
-        // timingFunction: 'ease', // 滑动方式
-        loop: true // 无限循环
-        // autoplay: 0 // 自动播放:时间[ms]
-      },
-      options1: {
-        direction: 'vertical',
-        pagination: true,
-        thresholdDistance: 100, // 滑动距离阈值判定
-        thresholdTime: 300, // 滑动时间阈值判定
-        grabCursor: true, // 抓标样式
-        speed: 300, // 滑动速度
-        // timingFunction: 'ease', // 滑动方式
-        loop: true // 无限循环
-        // autoplay: 0 // 自动播放:时间[ms]
-      }
-    }
-  },
-  mounted () {
-    let that = this
-    setTimeout(function () {
-      that.someList = [
-        {
-          html: 'slide1',
-          style: {
-            'background': '#1bbc9b'
-          }
-        }
-      ]
-      that.someList1 = [
-        {
-          html: 'slide1-1',
-          style: {
-            'background': '#1bbc9b'
-          }
-        },
-        {
-          html: 'slide2-2',
-          style: {
-            'background': '#4bbfc3'
-          }
-        },
-        {
-          html: 'slide3-3',
-          style: {
-            'background': '#7baabe'
-          }
-        }
-      ]
-    }, 2000)
-  },
-}
-</script>
+#deploy.sh
+LOCAL_BRANCH="master"
 ```
+
+04.set your remote git repo branch
+```html
+#deploy.sh
+REMOTE_BRANCH="gh-pages"
+```
+
+05.set your your doc is
+```html
+#deploy.sh
+DOCS_DIR="docs/.vuepress/dist"
+```
+
+
+05.has a custom domain?
+```html
+#deploy.sh
+CUSTOM_DOMAIN="" #www.example.com
+```
+
+### push to https://<USERNAME>.github.io?
+
+00.open or close,true:"0",false:"1"
+```html
+#deploy.sh
+A="0"
+```
+
+01.set your github user
+```html
+#deploy.sh
+REPO_USER="YMC-GitHub"
+```
+
+02.set your github repo
+```html
+#deploy.sh
+REPO_NAME="blog-tpl-vuepress"
+```
+
+03.set your local git repo branch
+```html
+#deploy.sh
+LOCAL_BRANCH="master"
+```
+
+04.set your remote git repo master branch
+```html
+#deploy.sh
+MASTER_BRANCH="master"
+```
+
+05.set your your doc is
+```html
+#deploy.sh
+DOCS_DIR="docs/.vuepress/dist"
+```
+
+
+05.has a custom domain?
+```html
+#deploy.sh
+CUSTOM_DOMAIN="" #www.example.com
+```
+
+
